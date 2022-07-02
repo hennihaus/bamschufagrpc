@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package de.hennihaus.rating;
+
+option java_package = "de.hennihaus.models.generated";
+option java_multiple_files = true;
+option java_outer_classname = "RatingServiceProto";
+option optimize_for = SPEED;
+
+service RatingService {
+  rpc GetRating(GetRatingRequest) returns (Rating);
+}
+
+message Rating {
+  int32 score = 1;
+  double failure_risk_in_percent = 2;
+}
+
+message GetRatingRequest {
+  string social_security_number = 1;
+  RatingLevel rating_level = 2;
+  int64 delay_in_milliseconds = 3;
+  string username = 4;
+  string password = 5;
+}
+
+enum RatingLevel {
+  RATING_LEVEL_UNSPECIFIED = 0;
+  RATING_LEVEL_A = 1;
+  RATING_LEVEL_B = 2;
+  RATING_LEVEL_C = 3;
+  RATING_LEVEL_D = 4;
+  RATING_LEVEL_E = 5;
+  RATING_LEVEL_F = 6;
+  RATING_LEVEL_G = 7;
+  RATING_LEVEL_H = 8;
+  RATING_LEVEL_I = 9;
+  RATING_LEVEL_J = 10;
+  RATING_LEVEL_K = 11;
+  RATING_LEVEL_L = 12;
+  RATING_LEVEL_N = 13;
+  RATING_LEVEL_O = 14;
+  RATING_LEVEL_P = 15;
+}

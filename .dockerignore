@@ -1,0 +1,10 @@
+.gradle
+.idea
+build
+gradle
+out
+.gitignore
+.git
+bamschufagrpc.iml
+gradlew
+gradlew.bat
